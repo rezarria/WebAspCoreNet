@@ -1,0 +1,9 @@
+/.vscode
+/Migrations
+/bin
+/data.sql
+/data.sqlite
+/database.sqlite
+/obj
+/test.sql
+/wwwroot/lib

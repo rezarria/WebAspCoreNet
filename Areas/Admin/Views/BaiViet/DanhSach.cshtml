@@ -1,0 +1,32 @@
+@model Web.Models.BaiViet[]
+@{
+}
+
+<div class="container-fluid">
+    <partial name="TaoBaiVIetPartial" view-data='new ViewDataDictionary(ViewData) {{"id", "modalTaoBaiViet"}}'/>
+    <button type="button" name="" id="" class="btn btn-primary" btn-lg btn-block">Xoá bài viết</button>
+    <button type="button" name="" id="" class="btn btn-primary" btn-lg btn-block">???</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tiêu đề</th>
+                <th>Ảnh bìa</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var baiViet in Model)
+            {
+                <tr>
+                    <td scope="row">@baiViet.TieuDe</td>
+                    <td><img src="@baiViet.AnhBia ?? '#'" alt="#"></td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+
+}

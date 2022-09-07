@@ -1,0 +1,62 @@
+@model Web.Areas.Admin.Controllers.TaiKhoanController.ModelDTO[]
+
+<button type="button" class="btn btn-app bg-success" data-toggle="modal" data-target="#taoTaiKhoan">
+    <i class="fas fa-plus"></i> Thêm tài khoản
+</button>
+
+@{
+var modalTaiKhoan = new ViewDataDictionary(ViewData) 
+{ 
+    {"ModalId", "taoTaiKhoan"}, 
+    {"ModalIdLabel", "taoTaiKhoanLabel"} 
+};
+}
+
+<partial name="./Partial/TaoTaiKhoan" view-data="@modalTaiKhoan" />
+
+<div class="card">
+
+    <div class="card-header">
+        <h3 class="card-title">Bordered Table</h3>
+    </div>
+
+
+    <div class=" card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>UserName</th>
+                    <th>Avatar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Username</td>
+                        <td>@item.Avatar</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item"><a class="page-link" href="#">«</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">»</a></li>
+        </ul>
+    </div>
+
+</div>
+
+@section Scripts
+{
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/font-awesome/js/all.min.css"></script>
+}
